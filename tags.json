@@ -1,0 +1,30 @@
+{
+    "hej": {
+        "attachments": [],
+        "message": "test"
+    },
+    "test2": {
+        "attachments": [
+            "WoWScrnShot_111016_204935.jpg"
+        ],
+        "message": "hejsan test 2"
+    },
+    "spin": {
+        "attachments": [],
+        "message": "https://media1.tenor.com/m/LELFrKy_hLsAAAAd/gorilla-spin.gif"
+    },
+    "rein": {
+        "attachments": [],
+        "message": "https://images-ext-1.discordapp.net/external/Y9_XNOITbFadOYYahSMdUtYfXwR2CJeQi8qx4bdQEPQ/https/i.imgur.com/qHhPJXn.mp4"
+    },
+    "wbpog": {
+        "attachments": [
+            "IMG_3685.jpg"
+        ],
+        "message": ""
+    },
+    "k\u00f6rkort": {
+        "attachments": [],
+        "message": "https://www.twitch.tv/quadzet/clip/DaintyFaintMangetoutKreygasm-XwL853K9XOVERsBo"
+    }
+}
