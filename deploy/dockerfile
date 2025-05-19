@@ -1,0 +1,32 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV DISCORD_TOKEN="null" \
+    DISCORD_GUILD="null"
+
+ARG GIT_REPO=https://github.com/Quadzet/quadbot.git
+ARG GIT_BRANCH=master
+
+RUN git clone -b ${GIT_BRANCH} ${GIT_REPO} .
+
+# Debug: List directory contents to confirm structure
+RUN ls -la
+RUN ls -la deploy || echo "No deploy directory found!"
+
+# Debug: Print content of requirements.txt if it exists
+RUN if [ -f deploy/requirements.txt ]; then cat deploy/requirements.txt; else echo "requirements.txt not found in deploy/"; fi
+
+# Install Python dependencies with verbose output
+RUN if [ -f deploy/requirements.txt ]; then pip install -v --no-cache-dir -r deploy/requirements.txt; else echo "Cannot install - file not found"; fi
+
+# Debug: Check if packages are installed
+RUN pip list
+RUN pip install discord
+RUN pip list
+CMD ["python", "main.py"]
